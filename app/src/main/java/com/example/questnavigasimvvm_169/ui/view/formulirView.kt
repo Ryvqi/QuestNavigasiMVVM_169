@@ -41,9 +41,12 @@ fun formulirView(modifier: Modifier = Modifier, lisJK: List<String>,
     var alamat by remember {
         mutableStateOf("")
     }
+    var nim by remember {
+        mutableStateOf("")
+    }
     var jekel by remember { mutableStateOf("") }
 
-    var listData: MutableList<String> = mutableListOf(nama, jekel, email, noHP, alamat)
+    var listData: MutableList<String> = mutableListOf(nama, jekel, email, noHP, nim, alamat)
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally) {
@@ -82,6 +85,14 @@ fun formulirView(modifier: Modifier = Modifier, lisJK: List<String>,
             onValueChange = {noHP = it},
             label = { Text("NoHP") },
             placeholder = { Text("Masukan NoHP Anda") },
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+        )
+
+        TextField(modifier = Modifier.fillMaxWidth().padding(5.dp),
+            value = nim,
+            onValueChange = {nim = it},
+            label = { Text("NIM") },
+            placeholder = { Text("Masukan NIM Anda") },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
         )
 
