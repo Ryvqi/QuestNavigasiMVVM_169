@@ -11,10 +11,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.questnavigasimvvm_169.model.Mahasiswa
 
 @Composable
-fun TampilMahasiswaView(mhs: Mahasiswa,){
+fun TampilMahasiswaView(
+    mhs: Mahasiswa,
+    navController: NavHostController){
     Column(modifier = Modifier.fillMaxSize()) {
         TampilData(
             judul = "Nama",

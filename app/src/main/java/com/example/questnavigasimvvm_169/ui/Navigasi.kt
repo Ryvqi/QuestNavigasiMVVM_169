@@ -49,8 +49,7 @@ fun Navigasi(modifier: Modifier = Modifier,
             ){
                 TampilMahasiswaView(
                     mhs = _uiState,
-                    onClickButton = {
-                    }
+                    navController = navHost
                 )
             }
         }
