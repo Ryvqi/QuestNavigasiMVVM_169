@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.questnavigasimvvm_169.model.DataJK
+import com.example.questnavigasimvvm_169.ui.view.TampilMahasiswaView
 import com.example.questnavigasimvvm_169.ui.view.formulirView
 import com.example.questnavigasimvvm_169.ui.viewModel.MahasiswaViewModel
 
@@ -26,7 +27,7 @@ fun Navigasi(modifier: Modifier = Modifier,
              navHost: NavHostController = rememberNavController()
 ){
     Scaffold {isipadding ->
-        val uiState by viewModel.uiState.collectAsState()
+        val _uiState by viewModel.uiState.collectAsState()
 
         NavHost(
             navController = navHost, startDestination = Halaman.Form.name
@@ -43,8 +44,15 @@ fun Navigasi(modifier: Modifier = Modifier,
                     }
                 )
             }
-
+            composable(
+                route = Halaman.Data.name
+            ){
+                TampilMahasiswaView(
+                    mhs = _uiState,
+                    onClickButton = {
+                    }
+                )
+            }
         }
-
     }
 }
