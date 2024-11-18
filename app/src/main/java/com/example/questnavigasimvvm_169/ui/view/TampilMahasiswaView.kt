@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.questnavigasimvvm_169.model.Mahasiswa
 
 @Composable
-fun TampilMahasiswaView(mhs: Mahasiswa){
+fun TampilMahasiswaView(mhs: Mahasiswa,){
     Column(modifier = Modifier.fillMaxSize()) {
         TampilData(
             judul = "Nama",
@@ -27,6 +28,24 @@ fun TampilMahasiswaView(mhs: Mahasiswa){
             judul = "Alamat",
             isinya = mhs.alamat
         )
+        TampilData(
+            judul = "NIM",
+            isinya = mhs.nim
+        )
+        TampilData(
+            judul = "Email",
+            isinya = mhs.email
+        )
+        TampilData(
+            judul = "No Hp",
+            isinya = mhs.noHP
+        )
+
+        Button(modifier = Modifier.padding(10.dp),
+            onClick = { navController.popBackStack() }
+        ){
+            Text("Back")
+        }
     }
 }
 

@@ -18,7 +18,10 @@ class MahasiswaViewModel: ViewModel() { // view model ": ViewModel"
             data.copy(  //ditampung dalam array []
                 nama = ls[0],
                 gender = ls[1],
-                alamat = ls[2]
+                email = ls[2],
+                noHP = ls[3],
+                nim = ls[4],
+                alamat = ls[5]
             )
         }
     }
